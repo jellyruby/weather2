@@ -2,21 +2,11 @@ import { HYDRATE } from 'next-redux-wrapper';
 import theme from './theme';
 import { combineReducers } from 'redux';
 
-const initialState = {
-  user:{
-
-  },
-  post:{
-
-  }
-  
-}
-
 
 
 const rootReducer = combineReducers({
   
-  index: (state = initialState, action) => {
+  index: (state = {}, action) => {
 
     switch(action.type){
       case HYDRATE:
@@ -26,8 +16,7 @@ const rootReducer = combineReducers({
     }
 
   },
-  user,
-  post  
+  theme
 
 });
 

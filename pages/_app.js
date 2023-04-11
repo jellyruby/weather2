@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import wrapper from '../store/configureStore';
+import {useSelector} from 'react-redux';
+import {ThemeProvider} from 'styled-components';
 
+const Weather = ({ Component }) => {
 
-const NodeBird = ({ Component }) => {
+  const theme = useSelector(state => state.theme);
 
   return (
     <ThemeProvider theme={theme}>
@@ -18,10 +21,10 @@ const NodeBird = ({ Component }) => {
 
 }
 
-NodeBird.propTypes = {
+Weather.propTypes = {
 
   Component: PropTypes.elementType.isRequired,
 
 }
 
-export default wrapper.withRedux(NodeBird);
+export default wrapper.withRedux(Weather);
