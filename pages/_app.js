@@ -3,6 +3,8 @@ import Head from 'next/head';
 import wrapper from '../store/configureStore';
 import {useSelector} from 'react-redux';
 import {ThemeProvider} from 'styled-components';
+import '/public/reset.css';
+
 
 const Weather = ({ Component }) => {
 
@@ -12,6 +14,7 @@ const Weather = ({ Component }) => {
     <ThemeProvider theme={theme}>
       <Head>
         <meta charSet="utf-8" />
+        
         <title> 페이지 </title>
       </Head>
       <Component />

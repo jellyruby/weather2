@@ -2,6 +2,7 @@ const initialState = {
   primaryColor: '#2196f3',
   textColor: '#fff',
   bgColor: '#2196f322',
+  
 };
 
 const SET_THEME = 'SET_THEME';
