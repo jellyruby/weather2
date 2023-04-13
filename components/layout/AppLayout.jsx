@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import useOnEvent from '/hooks/useOnEvent';
-import TopMenuBtn from './TopMenuBtn';
+import TopMenuBtn from '/components/layout/TopMenuBtn';
 import { useState } from 'react';
 
 
