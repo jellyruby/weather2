@@ -1,7 +1,12 @@
 const initialState = {
   primaryColor: '#2196f3',
-  textColor: '#fff',
-  bgColor: '#2196f322',
+  textColor: '#000000FF',
+  bgtextColor: '#000000AA',
+  Color: '#CDE6F5FF',
+  ColorB: '#DE560C99',
+  bgColor: '#CDE6F599',
+  bgColorB: '#DE560C22',
+  shadowColor: '#00000011',
   
 };
 

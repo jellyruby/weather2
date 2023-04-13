@@ -4,6 +4,7 @@ import wrapper from '../store/configureStore';
 import {useSelector} from 'react-redux';
 import {ThemeProvider} from 'styled-components';
 import '/public/reset.css';
+import '/public/main.css';
 
 
 const Weather = ({ Component }) => {
