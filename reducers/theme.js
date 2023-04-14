@@ -1,5 +1,5 @@
 const initialState = {
-  primaryColor: '#2196f3',
+  primaryColor: '#153A74CC',
   textColor: '#000000FF',
   bgtextColor: '#000000AA',
   Color: '#CDE6F5FF',

@@ -7,6 +7,7 @@ import '/public/reset.css';
 import '/public/main.css';
 
 
+
 const Weather = ({ Component }) => {
 
   const theme = useSelector(state => state.theme);
