@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import useOnEvent from '/hooks/useOnEvent';
 import TopMenuBtn from '/components/layout/TopMenuBtn';
 import { useState } from 'react';
 
@@ -48,7 +47,7 @@ const TopMenu = styled.div`
     background-color: ${props => props.theme.bgColor};
 
     //그림자 효과
-    box-shadow: 0 0.2vw 0 0.05vw ${props => props.theme.shadowColor};
+    box-shadow: 0 0.05vw 0 0.05vw ${props => props.theme.shadowColor};
 
   }
   & > div:nth-child(even) {
