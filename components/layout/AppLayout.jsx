@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 const TopMenu = styled.div`
 
+  z-index: 100;
   //그리드
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -16,28 +17,15 @@ const TopMenu = styled.div`
   
   text-align: center;
 
-  & > div:hover {
-    height: 3.36vh;
-    font-size: 2vh;
-    cursor : pointer;
-    color: ${props => props.theme.textColor};
-    background-color: ${props => props.theme.Color};
-  }
-
-  & > div:hover:nth-child(even) {
-    background-color: ${props => props.theme.ColorB};
-  }
 
   & > div  {
     
-    //그리드 텍스트 중앙정렬
     display: grid;
     justify-content: center;
     align-items: center;
 
     //박스 크기 변경
-    height: 2.52vh;
-    font-size: 1.5vh;
+    height: 14vh;
 
     //애니메이션 효과
     transition: all 0.2s ease-in-out; 
@@ -47,34 +35,54 @@ const TopMenu = styled.div`
     background-color: ${props => props.theme.bgColor};
 
     //그림자 효과
-    box-shadow: 0 0.05vw 0 0.05vw ${props => props.theme.shadowColor};
+    box-shadow: 0 0.05vw 0 0 ${props => props.theme.shadowColor};
 
   }
+
+  & img {
+    width: 5vh;
+  }
+
   & > div:nth-child(even) {
     background-color: ${props => props.theme.bgColorB};
 
+  }
+
+
+  
+  & > div:hover {
+    height: 38vh;
+    
+    cursor : pointer;
+    color: ${props => props.theme.textColor};
+    background-color: ${props => props.theme.Color};
+    box-shadow : 0 0 0 0 
+  }
+
+  & > div:hover:nth-child(even) {
+    background-color: ${props => props.theme.ColorB};
   }
 
 `;
 
 
 
-const AppLayout = () => {
+const AppLayout = ({ children }) => {
 
   const [menu, setMenu] = useState(
     [{ 
       key: 0,
-      value: '태풍',
+      value: <img alt='기후' src='/images/typhoon.svg'/>,
       url: '/typhoon'
     },
     { 
       key: 1,
-      value: '날씨',
+      value: <img alt='기후' src='/images/weather.svg'/>,
       url: '/weather'
     },
     { 
       key: 2,
-      value: '기후',
+      value: <img alt='기후' src='/images/climate.svg'></img>,
       url: '/climate'
     },
     ]
@@ -88,9 +96,8 @@ const AppLayout = () => {
           return <TopMenuBtn key={item.key} url={item.url} value={item.value}/>
         })
       }
-      
-      
     </TopMenu>
+    {children}
   </>;
 
 }

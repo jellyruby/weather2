@@ -1,4 +1,5 @@
 import {useRef} from 'react';
+import Link from 'next/link';
 
 const TopMenuBtn = ({ url ,value }) => {
 
@@ -9,7 +10,7 @@ const TopMenuBtn = ({ url ,value }) => {
   }
 
   return <div onClick={onClick}>
-    <a ref={aRef} href={url}>{value}</a>
+    <Link ref={aRef} href={url}>{value}</Link>
   </div>
   ;
 }

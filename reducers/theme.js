@@ -2,11 +2,11 @@ const initialState = {
   primaryColor: '#153A74CC',
   textColor: '#000000FF',
   bgtextColor: '#000000AA',
-  Color: '#CDE6F5FF',
-  ColorB: '#DE560C99',
-  bgColor: '#CDE6F599',
-  bgColorB: '#DE560C22',
-  shadowColor: '#00000011',
+  Color: '#CDE6F555',
+  ColorB: '#DE560C11',
+  bgColor: '#FFFFFFFF',
+  bgColorB: '#FFFFFFFF',
+  shadowColor: '#0000001F',
   
 };
 
