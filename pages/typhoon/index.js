@@ -18,7 +18,17 @@ const TyphoonContent = styled.div`
 
 `;
 
-  
+  const TyphoonContentList =[
+    <TyphoonContent>현재 태풍</TyphoonContent> ,
+    <TyphoonContent>태풍 환경</TyphoonContent> ,
+    <TyphoonContent>내용3</TyphoonContent> ,
+    <TyphoonContent>내용4</TyphoonContent> ,
+    <TyphoonContent>내용5</TyphoonContent> ,
+    <TyphoonContent>내용6</TyphoonContent> ,
+    <TyphoonContent>내용7</TyphoonContent> ,
+    <TyphoonContent>내용8</TyphoonContent> ,
+    <TyphoonContent>내용9</TyphoonContent> ,
+  ];
 
 
 
@@ -26,15 +36,10 @@ const Typhoon = () => {
   return (
     <AppLayout>
       <ContentLayout col={3} row={3}>
-        <TyphoonContent>현재 태풍</TyphoonContent> 
-        <TyphoonContent>태풍 환경</TyphoonContent> 
-        <TyphoonContent>내용3</TyphoonContent> 
-        <TyphoonContent>내용4</TyphoonContent> 
-        <TyphoonContent>내용5</TyphoonContent> 
-        <TyphoonContent>내용6</TyphoonContent> 
-        <TyphoonContent>내용7</TyphoonContent> 
-        <TyphoonContent>내용8</TyphoonContent> 
-        <TyphoonContent>내용9</TyphoonContent> 
+        {TyphoonContentList.map((item, index) => {
+          return <>{item}</>;
+          })
+        }
       </ContentLayout>
     </AppLayout>
   );
