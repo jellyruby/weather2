@@ -1,4 +1,4 @@
-import React from 'react';
+import {useState} from 'react';
 import styled from 'styled-components';
 
 
@@ -24,13 +24,14 @@ const StyledContent = styled.div`
 
 const Content = ({children}) => {
   
-  const onClick = () => {
+  const [click, setClick] = useState(false);  
 
-    console.log("click");
+  const onClick = () => {
+    click ? setClick(false) : setClick(true);    
   }
 
   return (
-    <StyledContent onClick={onClick} >
+    <StyledContent onClick={onClick} click={click}>
       {children}      
     </StyledContent>
   );
@@ -38,4 +39,4 @@ const Content = ({children}) => {
 
 };
 
-export default TyphoonContent;
+export default Content;
