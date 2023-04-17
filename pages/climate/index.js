@@ -1,10 +1,12 @@
 import AppLayout from "/components/layout/AppLayout";
-
+import ContentLayout from "/components/layout/ContentLayout";
 
 const Climate = () => {
   return (
     <AppLayout>
-      <h1>Climate</h1>
+      <ContentLayout col={3} row={3}>
+        
+      </ContentLayout>
     </AppLayout>
   );
 };

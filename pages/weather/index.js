@@ -1,9 +1,13 @@
 import AppLayout from "/components/layout/AppLayout";
+import ContentLayout from "/components/layout/ContentLayout";
+
 
 const Weather = () => {
   return (
     <AppLayout>
-      <h1>Weather</h1>
+      <ContentLayout col={3} row={3}>
+        
+      </ContentLayout>
     </AppLayout>
   );
 };
