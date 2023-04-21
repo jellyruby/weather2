@@ -2,41 +2,21 @@ import AppLayout from "/components/layout/AppLayout";
 import ContentLayout from "/components/layout/ContentLayout";
 import styled from "styled-components";
 import Link from "next/link";
+import Content from "/components/Content";
 
-
-const TyphoonContent = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  
-  &:hover {
-    background-color: ${props => props.theme.Color};
-  }
-
-  &.click {
-    
-  
-    z-index: -4;
-    top: 14vh;
-    width: 100%;
-    height: 86vh;
-  }
-
-`;
 
   const TyphoonContentList =[
-    <TyphoonContent>
+    <Content>
       <Link href="/typhoon/detail"></Link>
-    </TyphoonContent> ,
-    <TyphoonContent>태풍 환경</TyphoonContent> ,
-    <TyphoonContent>내용3</TyphoonContent> ,
-    <TyphoonContent>내용4</TyphoonContent> ,
-    <TyphoonContent>내용5</TyphoonContent> ,
-    <TyphoonContent>내용6</TyphoonContent> ,
-    <TyphoonContent>내용7</TyphoonContent> ,
-    <TyphoonContent>내용8</TyphoonContent> ,
-    <TyphoonContent>내용9</TyphoonContent> ,
+    </Content> ,
+    <Content>태풍 환경</Content> ,
+    <Content>내용3</Content> ,
+    <Content>내용4</Content> ,
+    <Content>내용5</Content> ,
+    <Content>내용6</Content> ,
+    <Content>내용7</Content> ,
+    <Content>내용8</Content> ,
+    <Content>내용9</Content> ,
   ];
 
 

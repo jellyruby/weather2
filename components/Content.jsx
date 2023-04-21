@@ -27,6 +27,7 @@ const Content = ({children}) => {
   const [click, setClick] = useState(false);  
 
   const onClick = () => {
+
     click ? setClick(false) : setClick(true);    
   }
 
