@@ -1,13 +1,13 @@
 import AppLayout from "/components/layout/AppLayout";
 import ContentLayout from "/components/layout/ContentLayout";
 import styled from "styled-components";
-import Link from "next/link";
+
 import Content from "/components/Content";
 
 
   const TyphoonContentList =[
-    <Content>
-      <Link href="/typhoon/detail"></Link>
+    <Content href="/typhoon/detail">
+      
     </Content> ,
     <Content>태풍 환경</Content> ,
     <Content>내용3</Content> ,

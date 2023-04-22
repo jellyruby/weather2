@@ -1,6 +1,6 @@
-import {useState} from 'react';
+import {useState,useRef} from 'react';
 import styled from 'styled-components';
-
+import Link from "next/link";
 
 const StyledContent = styled.div`
   display: flex;
@@ -22,17 +22,20 @@ const StyledContent = styled.div`
 
 `;
 
-const Content = ({children}) => {
+const Content = ({children,href}) => {
   
   const [click, setClick] = useState(false);  
+  const LinkRef = useRef(null); 
 
   const onClick = () => {
 
-    click ? setClick(false) : setClick(true);    
+    LinkRef.current.click();
+
   }
 
   return (
     <StyledContent onClick={onClick} click={click}>
+      <Link ref={LinkRef}  href={href??'/'}></Link>
       {children}      
     </StyledContent>
   );
