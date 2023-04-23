@@ -1,4 +1,4 @@
-import {useState,useRef} from 'react';
+import {useState,useRef,useEffect} from 'react';
 import styled from 'styled-components';
 import Link from "next/link";
 
@@ -25,16 +25,37 @@ const StyledContent = styled.div`
 const Content = ({children,href}) => {
   
   const [click, setClick] = useState(false);  
+  const [timer, setTimer] = useState(null); 
   const LinkRef = useRef(null); 
 
   const onClick = () => {
 
-    LinkRef.current.click();
+    setClick(!click);
+
+    // setTimeout(() => {
+    //   LinkRef.current.click();
+    // }, 1000);
+    
 
   }
 
+  useEffect (() => {
+    if (click) { 
+      setTimer(setTimeout(() => {
+        LinkRef.current.click();
+      }, 1000));
+    }
+
+    return () => {
+      clearTimeout(timer);
+    }
+
+  },[click]);
+
+
+
   return (
-    <StyledContent onClick={onClick} click={click}>
+    <StyledContent onClick={onClick} className={click}>
       <Link ref={LinkRef}  href={href??'/'}></Link>
       {children}      
     </StyledContent>
