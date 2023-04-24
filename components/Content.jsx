@@ -7,17 +7,27 @@ const StyledContent = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #fff;
+  z-index: -4;
+
+  & div{
+    position: relative;
+  }
   
   &:hover {
     background-color: ${props => props.theme.Color};
   }
 
-  &.click {
-    
-    z-index: -4;
-    top: 14vh;
-    width: 100%;
+  &.click div {
+    position: absolute;
+    //애니메이션 효과
+    transition: all 0.5s ease-in-out; 
+    z-index: -3;
+    width: 100vw;
     height: 86vh;
+    background-color: ${props => props.theme.bgColor};
+  }
+  &.click:hover div {
+    background-color: ${props => props.theme.bgColor};
   }
 
 `;
@@ -25,22 +35,21 @@ const StyledContent = styled.div`
 const Content = ({children,href}) => {
   
   const [click, setClick] = useState(false);  
+  const [className, setclassName] = useState(null);  
   const [timer, setTimer] = useState(null); 
   const LinkRef = useRef(null); 
 
   const onClick = () => {
 
-    setClick(!click);
-
-    // setTimeout(() => {
-    //   LinkRef.current.click();
-    // }, 1000);
-    
+    if(click === false) {
+      setClick(!click);
+      setclassName('click');
+    }
 
   }
 
   useEffect (() => {
-    if (click) { 
+    if (click === true) { 
       setTimer(setTimeout(() => {
         LinkRef.current.click();
       }, 1000));
@@ -50,14 +59,16 @@ const Content = ({children,href}) => {
       clearTimeout(timer);
     }
 
-  },[click]);
+  }, [click,LinkRef]);
 
 
 
   return (
-    <StyledContent onClick={onClick} className={click}>
-      <Link ref={LinkRef}  href={href??'/'}></Link>
-      {children}      
+    <StyledContent onClick={onClick} className={className}>
+      <div>
+        <Link ref={LinkRef}  href={href??'/'}></Link>
+        {children}      
+      </div>
     </StyledContent>
   );
 
