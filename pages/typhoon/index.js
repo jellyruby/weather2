@@ -7,7 +7,7 @@ import Content from "/components/Content";
 
   const TyphoonContentList =[
     <Content href="/typhoon/detail">
-      
+      뀨뀨꺄꺄
     </Content> ,
     <Content>태풍 환경</Content> ,
     <Content>내용3</Content> ,
