@@ -1,5 +1,6 @@
 import { HYDRATE } from 'next-redux-wrapper';
 import theme from './theme';
+import content from './content';
 import { combineReducers } from 'redux';
 
 
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
     }
 
   },
-  theme
+  theme,
+  content
 
 });
 

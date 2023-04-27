@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import {useSelector} from 'react-redux';
 
 
 
@@ -12,8 +12,6 @@ const ContentLayoutStyled = styled.div`
   
   grid-template-columns: repeat(${props => props.col}, 1fr);
   grid-template-rows: repeat(${props => props.row}, 1fr);
-  grid-template-areas: "main";
-  grid-template-margin: 0.5vh 0.5vh 0.5vh 0.5vh;
 
   z-index: -5;
   top: 14vh;
@@ -25,7 +23,11 @@ const ContentLayoutStyled = styled.div`
 //그리드 개수에 따라서 그리드 템플릿 변경
 const ContentLayout = ({ col, row , children}) => {
 
-  return <ContentLayoutStyled col={col} row={row}>
+  const isClicked = useSelector(state => state.content.contentClicked);
+
+  console.log(isClicked);
+
+  return <ContentLayoutStyled col={col} row={row} isClicked={isClicked}>
     {children}
   </ContentLayoutStyled>
   ;

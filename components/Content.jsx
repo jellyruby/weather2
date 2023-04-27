@@ -1,20 +1,21 @@
 import {useState,useRef,useEffect} from 'react';
+import { useDispatch } from 'react-redux';
+import { setClicked } from '/reducers/content'
 import styled from 'styled-components';
 import Link from "next/link";
 
 const StyledContent = styled.div`
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   background-color: #fff;
   z-index: -4;
+  top: ${props => props.top??0};
+  left : ${props => props.left??0};
+  left: 0;
 
-  
-  transition-property: width,height,z-index;
-  transition-duration: 1s, 1s;
-  transition-timing-function: ease-out, ease-out;
-
-  
+  width: calc(100vw/3);
+  height: calc(86vh/3);
   
   & div{
     position: relative;
@@ -28,8 +29,12 @@ const StyledContent = styled.div`
     position: absolute;
     //애니메이션 효과
     
+    transition-property: width, height,position;
+    transition-duration: 0.5s, 0.5s, 0.5s;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s, 0.5s;
 
-    z-index: -3;
+    z-index: 10;
     width: 100vw;
     height: 86vh;
     background-color: ${props => props.theme.bgColor};
@@ -42,14 +47,18 @@ const StyledContent = styled.div`
 const Content = ({children,href}) => {
   
   const [click, setClick] = useState(false);  
-  
   const [timer, setTimer] = useState(null); 
+  const dispatch = useDispatch();
+
+  
   const LinkRef = useRef(null); 
 
   const onClick = () => {
 
     if(click === false) {
       setClick(!click);
+      
+      dispatch(setClicked({contentClicked:true}));
     }
 
   }
@@ -72,8 +81,9 @@ const Content = ({children,href}) => {
   return (
     <>
       <StyledContent onClick={onClick} isClicked ={click}>
-          <Link ref={LinkRef}  href={href??'/'}></Link>
-          {children}      
+          {children}
+          <Link ref={LinkRef}  href={href??'/'} style={{display:'none'}}></Link>
+                
       </StyledContent>
       {click && <StyledContent></StyledContent>}
     </>
