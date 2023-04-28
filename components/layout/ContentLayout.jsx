@@ -17,6 +17,23 @@ const ContentLayoutStyled = styled.div`
   top: 14vh;
   width: 100%;
   height: 86vh;
+
+
+  ${props => props.isClicked  && `
+    position: absolute;
+    //애니메이션 효과
+    
+    transition-property: background-color,;
+    transition-duration: 0.5s, 0.5s, 0.5s;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s, 0.5s;
+
+    z-index: 10;
+    width: 100vw;
+    height: 86vh;
+    background-color: ${props => props.theme.bgColor};
+  `}
+
 `;
 
 
@@ -24,8 +41,6 @@ const ContentLayoutStyled = styled.div`
 const ContentLayout = ({ col, row , children}) => {
 
   const isClicked = useSelector(state => state.content.contentClicked);
-
-  console.log(isClicked);
 
   return <ContentLayoutStyled col={col} row={row} isClicked={isClicked}>
     {children}
