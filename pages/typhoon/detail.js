@@ -38,7 +38,15 @@ const Detail = () => {
     <AppLayout>
       <DetailContent>
         <div>제목</div>
-        <div>설명</div>
+        <div>설명
+
+        
+          <a href="https://www.data.jma.go.jp/gmd/kaiyou/data/db/kaikyo/daily/sst_HQ.html?areano=0">
+          일본 기상청 수온 데이터
+          </a>
+        </div>
+        
+        
 
       </DetailContent>
     </AppLayout>
