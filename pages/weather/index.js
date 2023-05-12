@@ -11,9 +11,8 @@ const Weather = () => {
 
   return (
     <AppLayout>
-      <ContentLayout col={3} row={3}>
-        <WeatherMap/>
-      </ContentLayout>
+      <WeatherMap/>
+      
     </AppLayout>
   );
 };
