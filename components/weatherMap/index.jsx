@@ -50,7 +50,7 @@ const WeatherMap = () => {
           lng: location?.coords?.longitude  
         }
       }
-      style={{ width: "100%", height: "360px" }}
+      style={{ width: "100%", height: "70vh" }}
       >
       <MapMarker position={
         { 
